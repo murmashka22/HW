@@ -1,16 +1,16 @@
 <?
-$host = 'localhost';
+/*$host = 'localhost';
 $username='maria';
 $password='2212';
-$dbname='authorization';
+$dbname='authorization';*/
 
 /*Создание БД authorization*/
-$sql=mysqli_connect($host, $username, $password) or die('Неть');
+/*$sql=mysqli_connect($host, $username, $password) or die('Неть');*/
 /*mysqli_set_charset($conn,'utf8');
 mysqli_query($conn,"CREATE DATABASE $dbname");*/
 
 /*Работа с текущей БД*/
-mysqli_select_db($sql,$dbname);
+/*mysqli_select_db($sql,$dbname);*/
 
 /*Создание таблицы users, user_id-первичный ключ*/
 /*$sql='CREATE TABLE `users` (
@@ -25,16 +25,28 @@ mysqli_select_db($sql,$dbname);
 
 
 
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!СМОТРЕТЬ ЗДЕСЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 include 'res.php';/*подключение файла с классом*/
 
-try {
-    $user=new AUTO($_POST['login'],$_POST['pass']);
-    $user->He();
+
+if ($_POST['submit']=='Зарегистрироваться') {
+    $a=$_POST['login'];
+    $b=$_POST['pass'];
+    $user=new Auto("$a","$b");
+    $user->Print1();
+
+    /*       $user->Fields();
+           $user->LengthLogin();
+           $user->Verification_Recording();*/
 }
-catch (Exception $e){
-    echo "Неа";
+elseif ($_POST['submit']=='Войти'){
+    $user=new Auto($_POST['login'],$_POST['pass']);
+    $user->Verification();
 }
+else{
+    echo '';
+}
+
 
 ?>
 
@@ -55,7 +67,7 @@ catch (Exception $e){
 <div class="form">
     <h1>Вход</h1>
 
-    <form action="res.php" method="post">
+    <form action="#" method="post">
         <div class="input-form">
             <input type="text" name="login" placeholder="Логин">
         </div>

@@ -1,0 +1,78 @@
+body{
+    background: url("../image/1.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Pacifico', cursive;
+}
+
+.input-form input[type="submit"]{
+    font-family: 'Pacifico', cursive;
+}
+
+.form{
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(255,255,255,.9);
+}
+
+.form h1{
+    margin: 30px 100px;
+    padding: 0;
+    text-align: center;
+    color: #000;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.input-form{
+    margin: 15px 40px;
+    text-align: center;
+}
+
+.input-form input{
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    color: #000000;
+    font-size: 20px;
+    background: none;
+    outline: none;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.input-form input[type="text"]:focus, .input-form input[type="password"]:focus{
+    border: 1px solid #fff;
+}
+
+.input-form input[type="submit"]{
+    border-radius: 10px;
+    margin-top: 20px;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    background: rgba(5, 60, 64, 0.5);
+    transition: .3s;
+}
+
+.input-form input[type="submit"]:hover{
+    background: rgba(5, 60, 64, 0.8);
+}
+
+.form a{
+    display: block;
+    padding: 0 0 30px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.form a:hover{
+    color: #053c40;
+}
